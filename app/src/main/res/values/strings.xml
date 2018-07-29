@@ -3,4 +3,16 @@
 
     <string name="permission_request_denied">Permission request denied</string>
     <string name="error_gif">x or y bound size should be at least %1$dpx and file size should be no more than %2$sM</string>
+
+
+    <string name="title_avatar_view">avatar</string>
+    <string name="title_dashboard_view">dashboard</string>
+    <string name="title_circle_view">circle</string>
+    <string name="title_piechart_view">peichart</string>
+    <string name="title_scaleable_view">scaleable</string>
+    <string name="title_squarel_view">squarel</string>
+    <string name="title_sports_view">sports</string>
+    <string name="title_watch_view">watch</string>
+    <string name="title_flowlayout_view">flowlayout</string>
+
 </resources>

@@ -13,38 +13,14 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.DashboardActivity"
+        <activity android:name=".CommenViewActivity"
             android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".activity.PieChartActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity android:name=".activity.WatchBoardActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity android:name=".activity.SportsViewActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity android:name=".activity.AvatarActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity android:name=".activity.SquarelImageViewActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
-        <activity android:name=".activity.FlowLayoutActivity"
-            android:screenOrientation="portrait">
-        </activity>
 
     </application>
 

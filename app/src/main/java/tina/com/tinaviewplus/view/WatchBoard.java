@@ -10,7 +10,6 @@ import android.view.View;
 
 import tina.com.tinaviewplus.util.DeviceUtil;
 
-
 /**
  * @author yxc
  * @date 2018/7/18

@@ -14,43 +14,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:text="Dashboard"
-        android:onClick="intentDash"/>
-
-    <Button
-        android:id="@+id/PieChart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PieChart"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:onClick="intentPie" />
-
-    <Button
-        android:id="@+id/AvatarView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AvatarView"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:onClick="intentAvatar"/>
-
-    <Button
-        android:id="@+id/SportView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SportView"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:onClick="intentSport" />
-
-    <Button
-        android:id="@+id/ImageText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ImageText"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:onClick="intentImageText" />
+        android:onClick="commonView"/>
 
     <Button
         android:id="@+id/imageLoader"

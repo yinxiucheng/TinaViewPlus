@@ -24,11 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.functions.Consumer;
-import tina.com.tinaviewplus.activity.AvatarActivity;
-import tina.com.tinaviewplus.activity.DashboardActivity;
-import tina.com.tinaviewplus.activity.FlowLayoutActivity;
-import tina.com.tinaviewplus.activity.PieChartActivity;
-import tina.com.tinaviewplus.activity.SportsViewActivity;
 import tina.com.tinaviewplus.image.GifSizeFilter;
 import tina.com.tinaviewplus.image.Glide4Engine;
 
@@ -40,42 +35,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void intentDash(View view) {
+
+    public void commonView(View view) {
         Intent intent = new Intent();
-        intent.setClass(this, DashboardActivity.class);
+        intent.setClass(this, CommenViewActivity.class);
         startActivity(intent);
-    }
-
-    public void intentPie(View view) {
-        Intent intent = new Intent();
-        intent.setClass(this, PieChartActivity.class);
-        startActivity(intent);
-    }
-
-    public void intentAvatar(View view) {
-        Intent intent = new Intent();
-        intent.setClass(this, AvatarActivity.class);
-        startActivity(intent);
-    }
-
-    public void intentSport(View view) {
-        Intent intent = new Intent();
-        intent.setClass(this, SportsViewActivity.class);
-        startActivity(intent);
-    }
-
-    public void intentImageText(View view) {
-//        Intent intent = new Intent();
-//        intent.setClass(this, SquarelImageViewActivity.class);
-//        startActivity(intent);
-
-        Intent intent = new Intent();
-        intent.setClass(this, FlowLayoutActivity.class);
-        startActivity(intent);
-
-//        Intent intent = new Intent();
-//        intent.setClass(this, WatchBoardActivity.class);
-//        startActivity(intent);
     }
 
     public void imageLoader(View view) {
