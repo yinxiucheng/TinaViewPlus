@@ -24,6 +24,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.functions.Consumer;
+import tina.com.tinaviewplus.activity.CommonViewActivity;
+import tina.com.tinaviewplus.activity.FlipBoardActivity;
+import tina.com.tinaviewplus.activity.SeniorViewActivity;
 import tina.com.tinaviewplus.image.GifSizeFilter;
 import tina.com.tinaviewplus.image.Glide4Engine;
 
@@ -37,13 +40,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void commonView(View view) {
         Intent intent = new Intent();
-        intent.setClass(this, CommenViewActivity.class);
+        intent.setClass(this, CommonViewActivity.class);
         startActivity(intent);
     }
 
     public void spuerView(View view) {
         Intent intent = new Intent();
-        intent.setClass(this, SuperViewActivity.class);
+        intent.setClass(this, SeniorViewActivity.class);
+        startActivity(intent);
+    }
+
+    public void flipboard(View view) {
+        Intent intent = new Intent();
+        intent.setClass(this, FlipBoardActivity.class);
         startActivity(intent);
     }
 
@@ -120,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Matisse", "mSelected: " + mSelected);
         }
     }
+
 
 }
 

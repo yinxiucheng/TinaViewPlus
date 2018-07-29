@@ -17,10 +17,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".CommenViewActivity"
+        <activity android:name=".activity.CommonViewActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".SuperViewActivity"
+        <activity android:name=".activity.SeniorViewActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.FlipBoardActivity"
             android:screenOrientation="portrait"/>
     </application>
 

@@ -1,4 +1,4 @@
-package tina.com.tinaviewplus;
+package tina.com.tinaviewplus.activity;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -13,7 +13,10 @@ import android.support.v7.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SuperViewActivity extends AppCompatActivity {
+import tina.com.tinaviewplus.R;
+import tina.com.tinaviewplus.fragment.PageFragment;
+
+public class SeniorViewActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager pager;
