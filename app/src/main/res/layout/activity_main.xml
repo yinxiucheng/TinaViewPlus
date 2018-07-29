@@ -13,8 +13,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:text="Dashboard"
+        android:text="CommonView"
         android:onClick="commonView"/>
+
+    <Button
+        android:id="@+id/superView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:text="SuperView"
+        android:onClick="spuerView"/>
 
     <Button
         android:id="@+id/imageLoader"

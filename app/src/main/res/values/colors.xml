@@ -3,4 +3,78 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+
+
+    <color name="white">#ffffff</color>
+    <color name="white30">#4cffffff</color>
+    <color name="white50">#80ffffff</color>
+    <color name="white60">#99ffffff</color>
+    <color name="white70">#B3ffffff</color>
+    <color name="white80">#ccffffff</color>
+    <color name="app_background">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="black10">#19000000</color>
+    <color name="black15">#26000000</color>
+    <color name="black25">#40000000</color>
+    <color name="black30">#4D000000</color>
+    <color name="black35">#59000000</color>
+    <color name="black50">#7F000000</color>
+    <color name="black60">#99000000</color>
+    <color name="black80">#cc000000</color>
+
+    <!-- “照片MV”点击开始制作的弹出框背景色 -->
+    <drawable name="dark_black_cor">#FF1f1e23</drawable>
+
+    <!-- 评论点击状态色 -->
+    <color name="color_bg_topbar">#ffffff</color>
+
+    <!-- 双列或者更多列的feed ImageView 默认显示图 -->
+    <drawable name="multi_columns_feed_bg">#ebedf0</drawable>
+
+    <!-- 2.0 -->
+    <color name="colorff206f">#ff206f</color>
+
+    <!-- 2.0 -->
+
+    <color name="color808080alpha50">#7F808080</color>
+
+    <color name="colorf12e6e80">#ccf12e6e</color>
+
+    <color name="color808080">#808080</color>
+
+    <color name="colore5e5e5">#e5e5e5</color>
+
+    <!--7.0.0-->
+    <color name="colore3e4e6">#e3e4e6</color>
+    <color name="colorf0f1f2">#f0f1f2</color>
+    <color name="colorff3355">#ff3355</color>
+    <color name="colorff3355_alpha70">#b3ff3355</color>
+    <color name="colorff3355_alpha50">#80ff3355</color>
+    <color name="colorb3b3b3">#b3b3b3</color>
+    <color name="colorebebeb">#ebebeb</color>
+    <color name="colorff4060">#ff4060</color>
+    <color name="colorff4060_alpha_70">#b3ff4060</color>
+    <color name="color0daeff">#0daeff</color>
+    <color name="color30bdff">#30bdff</color>
+    <!--亮色涟漪效果-->
+    <color name="light_ripple_color">#cacbcc</color>
+    <!--暗色涟漪效果-->
+
+    <!-- 7.0.0 -->
+    <color name="coloredeff2">#edeff2</color>
+    <color name="color80333333">#80333333</color>
+    <color name="color333333">#333333</color>
+    <color name="color999999">#999999</color>
+
+
+    <!--主界面导航栏普通背景颜色-->
+    <color name="main_navigation_nav_background_color">#ffffff</color>
+    <color name="main_nav_title_normal">#585858</color>
+    <color name="main_nav_title_checked">#ff3355</color>
+
+    <color name="ecenter_dlg_tip_black">#ff1d212c</color>
+    <color name="ecenter_btn_gradient_left">#FF3961</color>
+    <color name="ecenter_btn_gradient_right">#FF914E</color>
 </resources>

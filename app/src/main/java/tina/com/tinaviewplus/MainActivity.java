@@ -35,10 +35,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     public void commonView(View view) {
         Intent intent = new Intent();
         intent.setClass(this, CommenViewActivity.class);
+        startActivity(intent);
+    }
+
+    public void spuerView(View view) {
+        Intent intent = new Intent();
+        intent.setClass(this, SuperViewActivity.class);
         startActivity(intent);
     }
 
