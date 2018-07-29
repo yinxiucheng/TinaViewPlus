@@ -18,7 +18,7 @@ import tina.com.tinaviewplus.util.DeviceUtil;
  * @author yxc
  * @date 2018/7/18
  */
-public class DashBoard extends View {
+public class DashBoardView extends View {
 
     public static final int PADDING = DeviceUtil.dip2px(40);
     public static final int ANGLE = 120;
@@ -33,7 +33,6 @@ public class DashBoard extends View {
 
     public static final int POINT_PADDING = DeviceUtil.dip2px(3);
 
-
     private Paint circlePaint;
     private Path dash;
     private Path dashred;
@@ -47,23 +46,22 @@ public class DashBoard extends View {
     private Paint dashPaint;
     private Paint pointPaint;//指针笔
 
-    public DashBoard(Context context) {
+    public DashBoardView(Context context) {
         super(context);
         init();
     }
 
-    public DashBoard(Context context, @Nullable AttributeSet attrs) {
+    public DashBoardView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public DashBoard(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public DashBoardView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
 
     private void init(){
-
         dash = new Path();
         path = new Path();
         dashred = new Path();
@@ -85,6 +83,7 @@ public class DashBoard extends View {
         pointPaint.setStyle(Paint.Style.FILL);
         pointPaint.setStrokeWidth(DeviceUtil.dip2px(5));
         pointPaint.setColor(Color.BLACK);
+        setValue(12);
     }
 
     @Override
@@ -126,15 +125,19 @@ public class DashBoard extends View {
         canvas.restore();
     }
 
-
+    /**
+     * 绘制指针
+     *
+     * @param canvas
+     */
     private void drawPoint(Canvas canvas){
         canvas.save();
         //绘制指针
         canvas.drawCircle(getWidth() / 2, getHeight() / 2, DeviceUtil.dip2px(8), pointPaint);
         pointLength = radius * 3/4;
-        int angle = getAngle(2);
-        float stopX = (float) (getWidth()/2 + pointLength * Math.cos(angle) );
-        float stopY = (float) (getHeight()/2 + pointLength * Math.sin(angle));
+        int angle = getAngle(value);
+        float stopX = (float) (getWidth()/2 + pointLength * Math.cos(angle * Math.PI/180) );
+        float stopY = (float) (getHeight()/2 + pointLength * Math.sin(angle * Math.PI/180));
         canvas.drawLine(getWidth() / 2, getHeight() / 2, stopX, stopY, pointPaint);
 
         canvas.restore();
@@ -148,6 +151,5 @@ public class DashBoard extends View {
     public int getAngle(int value) {
         return 90 + ANGLE / 2 + (360 - ANGLE) / TOTAL * value;
     }
-
 
 }

@@ -21,11 +21,21 @@ public class PieChartView extends View {
     private int[] colorArray = {Color.parseColor("#9df979"), Color.parseColor("#2b1cf9"),
             Color.parseColor("#f91b35"), Color.parseColor("#e443f9")};
 
-    private final static int PADDING = DeviceUtil.dip2px(30);
-    private final static int PADDING_OFFSET = DeviceUtil.dip2px(15);
+    private final static int PADDING = DeviceUtil.dip2px(50);
+    private final static int PADDING_OFFSET = DeviceUtil.dip2px(10);
     private int radius;
 
     private RectF rectF;
+
+    public int getPullOutofIndex() {
+        return pullOutofIndex;
+    }
+
+    public void setPullOutofIndex(int pullOutofIndex) {
+        this.pullOutofIndex = pullOutofIndex;
+        invalidate();
+    }
+
     private int pullOutofIndex;
 
 
@@ -47,7 +57,7 @@ public class PieChartView extends View {
     private void init() {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         rectF = new RectF();
-        pullOutofIndex = 0;
+        setPullOutofIndex(2);
     }
 
     @Override
@@ -64,8 +74,8 @@ public class PieChartView extends View {
             mPaint.setColor(color);
             if (i == pullOutofIndex) {
                 float angleOffset = usedAngle + angle/2;
-                float offsetDx = PADDING_OFFSET * (float)Math.cos(30);
-                float offsetDy = PADDING_OFFSET * (float)Math.sin(30);
+                float offsetDx = PADDING_OFFSET * (float)Math.cos(angleOffset * Math.PI/180);
+                float offsetDy = PADDING_OFFSET * (float)Math.sin(angleOffset * Math.PI/180);
                 rectF.offset(offsetDx, offsetDy);
                 canvas.drawArc(rectF, usedAngle, angle, true, mPaint);
                 rectF.offset(-offsetDx, -offsetDy);

@@ -60,10 +60,14 @@ public class SportView extends View {
         radius = getWidth() / 2 - PADDING;
         rectF.set(PADDING, getHeight() / 2 - radius, getWidth() - PADDING, getHeight() / 2 + radius);
 
+        paint.reset();
+        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(DeviceUtil.dip2px(20));
         paint.setColor(Color.GRAY);
         canvas.drawCircle(getWidth() / 2, getHeight() / 2, radius, paint);
 
-        paint.setColor(Color.RED);
+        paint.setColor(Color.parseColor("#458B74"));
         paint.setStrokeCap(Paint.Cap.ROUND);
         canvas.drawArc(rectF, -90, 270, false, paint);
 

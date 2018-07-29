@@ -20,8 +20,6 @@
         <activity android:name=".CommenViewActivity"
             android:screenOrientation="portrait">
         </activity>
-
-
     </application>
 
 </manifest>

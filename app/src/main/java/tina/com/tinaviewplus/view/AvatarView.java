@@ -8,9 +8,12 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
+import android.graphics.Xfermode;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions;
 
 import tina.com.tinaviewplus.R;
 import tina.com.tinaviewplus.util.DeviceUtil;
@@ -22,13 +25,10 @@ import tina.com.tinaviewplus.util.DeviceUtil;
 public class AvatarView extends View {
 
     Paint paint;
-    Paint textPaint;
-
-
     private float radius;
     public static final float PADDING = DeviceUtil.dip2px(40);
-    private RectF rectF;
-    Bitmap bitmap;
+    public static final float RADIUS_PADDING = DeviceUtil.dip2px(10);
+    Xfermode xfermode;
 
     public AvatarView(Context context) {
         super(context);
@@ -47,9 +47,7 @@ public class AvatarView extends View {
 
     private void init() {
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.avatar_rengwuxian);
-
-        rectF = new RectF();
+        xfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN);
     }
 
 
@@ -57,14 +55,26 @@ public class AvatarView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        rectF.set(getWidth() / 2 - PADDING, getHeight() / 2 - PADDING, getWidth() / 2 + PADDING, getHeight() / 2 + PADDING);
-        float radius = getWidth() / 2 - PADDING;
-
+        float radius = Math.min(getWidth(), getHeight()) / 2 - PADDING;
         canvas.drawCircle(getWidth() / 2, getHeight() / 2, radius, paint);
-
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        canvas.drawBitmap(bitmap, null, rectF, paint);
-
+        int save = canvas.saveLayer(0, 0, getWidth(), getHeight(), paint);
+        canvas.drawCircle(getWidth()/2, getHeight()/2, radius - RADIUS_PADDING, paint);
+        paint.setXfermode(xfermode);
+        canvas.drawBitmap(getAvatar((int) radius * 2), getWidth()/2 - radius, getHeight()/2 - radius, paint);
+        paint.setXfermode(null);
+        canvas.restoreToCount(save);
     }
+
+
+    private Bitmap getAvatar(int width) {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(getResources(), R.drawable.avatar_rengwuxian, options);
+        options.inJustDecodeBounds = false;
+        options.inDensity = options.outWidth;
+        options.inTargetDensity = width;
+        return BitmapFactory.decodeResource(getResources(), R.drawable.avatar_rengwuxian, options);
+    }
+
 
 }

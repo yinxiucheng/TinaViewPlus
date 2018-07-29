@@ -27,7 +27,7 @@ public class PageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_page, container, false);
 
-        ViewStub sampleStub = (ViewStub) view.findViewById(R.id.sampleStub);
+        ViewStub sampleStub = view.findViewById(R.id.sampleStub);
         sampleStub.setLayoutResource(sampleLayoutRes);
         sampleStub.inflate();
         return view;
