@@ -52,7 +52,7 @@ public class MapView extends View {
         if (drawable != null) {
             bitmap = drawable.getBitmap();
         } else {
-            bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.flip_board);
+            bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.flip_board);
         }
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         camera = new Camera();

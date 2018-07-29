@@ -8,29 +8,29 @@
     android:layout_gravity="center_horizontal">
 
     <Button
-        android:id="@+id/dashboard"
+        android:id="@+id/commonview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:text="CommonView"
         android:onClick="commonView"/>
 
     <Button
-        android:id="@+id/superView"
+        android:id="@+id/seniorview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:text="SuperView"
-        android:onClick="spuerView"/>
+        android:layout_marginTop="20dp"
+        android:text="SeniorView"
+        android:onClick="seniorView"/>
 
     <Button
         android:id="@+id/flipborad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:text="Flipborad"
         android:onClick="flipboard"/>
 

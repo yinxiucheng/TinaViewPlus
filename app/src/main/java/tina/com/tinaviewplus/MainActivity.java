@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void spuerView(View view) {
+    public void seniorView(View view) {
         Intent intent = new Intent();
         intent.setClass(this, SeniorViewActivity.class);
         startActivity(intent);
@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Matisse", "mSelected: " + mSelected);
         }
     }
+
 
 
 }
