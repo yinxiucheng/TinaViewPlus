@@ -22,7 +22,7 @@ public class SeniorViewActivity extends AppCompatActivity {
     ViewPager pager;
     List<PageModel> pageModels = new ArrayList<>();
     {
-        pageModels.add(new PageModel(R.layout.fragment_matrial_edit_view, R.string.title_matrial_edittext));
+        pageModels.add(new PageModel(R.layout.fragment_matrialedit_view, R.string.title_matrial_edittext));
         pageModels.add(new PageModel(R.layout.fragment_flowlayout_view, R.string.title_flowlayout_view));
     }
 

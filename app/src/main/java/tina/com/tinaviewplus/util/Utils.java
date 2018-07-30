@@ -12,4 +12,7 @@ public class Utils {
     public static Context getApplicationContext(){
         return MyApplication.getContext();
     }
+
+
+
 }
