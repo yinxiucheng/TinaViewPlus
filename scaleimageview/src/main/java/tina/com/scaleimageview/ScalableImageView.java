@@ -1,5 +1,7 @@
 package tina.com.scaleimageview;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -92,7 +94,7 @@ public class ScalableImageView extends View implements GestureDetector.OnGesture
         super.onDraw(canvas);
 //        float scale = big ? bigScale : smallScale;
 
-        canvas.translate(offsetX, offsetY);
+        canvas.translate(offsetX * scaleFraction, offsetY * scaleFraction);
         float scale = smallScale + (bigScale - smallScale) * scaleFraction;
 
         canvas.scale(scale, scale, getWidth() / 2f, getHeight() / 2f);
@@ -128,16 +130,19 @@ public class ScalableImageView extends View implements GestureDetector.OnGesture
     public boolean onScroll(MotionEvent down, MotionEvent event, float distanceX, float distanceY) {
         if (big) {//小图不动
             offsetX -= distanceX;
-            offsetX = Math.min(offsetX, (bitmap.getWidth() * bigScale - getWidth()) / 2);
-            offsetX = Math.max(offsetX, -(bitmap.getWidth() * bigScale - getWidth()) / 2);
-
             offsetY -= distanceY;
-            offsetY = Math.min(offsetY, (bitmap.getWidth() * bigScale - getWidth()) / 2);
-            offsetY = Math.max(offsetY, -(bitmap.getWidth() * bigScale - getWidth()) / 2);
+            fixOffset();
 
             invalidate();
         }
         return false;
+    }
+
+    private void fixOffset(){
+        offsetX = Math.min(offsetX, (bitmap.getWidth() * bigScale - getWidth()) / 2);
+        offsetX = Math.max(offsetX, -(bitmap.getWidth() * bigScale - getWidth()) / 2);
+        offsetY = Math.min(offsetY, (bitmap.getWidth() * bigScale - getWidth()) / 2);
+        offsetY = Math.max(offsetY, -(bitmap.getWidth() * bigScale - getWidth()) / 2);
     }
 
     //长按
@@ -189,6 +194,9 @@ public class ScalableImageView extends View implements GestureDetector.OnGesture
     public boolean onDoubleTap(MotionEvent e) {//300ms 之内算双击， 低于40ms不算做双击
         big = !big;
         if (big) {
+            offsetX = (e.getX() - getWidth() / 2f) - (e.getX() - getWidth() / 2f) * bigScale / smallScale;
+            offsetY = (e.getY() - getHeight() / 2f) - (e.getY() - getHeight() / 2f) * bigScale / smallScale;
+            fixOffset();
             getScaleAnimator().start();
         } else {
             getScaleAnimator().reverse();
@@ -204,7 +212,7 @@ public class ScalableImageView extends View implements GestureDetector.OnGesture
 
     @Override
     public void run() {
-        if (overScroller.computeScrollOffset()){//动画没结束
+        if (overScroller.computeScrollOffset()) {//动画没结束
             offsetX = overScroller.getCurrX();
             offsetY = overScroller.getCurrY();
             invalidate();
